@@ -26,3 +26,6 @@ for doc in posts_ref.stream():
 
     st.subheader(f'Post:{title}')
     st.write(f':link: [{url}]({url})')
+
+st.write("DB username:",st.secrets["db_username"])
+st.write("DB password:",st.secrets["db_password"])
