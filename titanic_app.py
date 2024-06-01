@@ -2,6 +2,10 @@ import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+
 from google.cloud import firestore
 from google.oauth2 import service_account
 
