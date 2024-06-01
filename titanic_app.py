@@ -2,17 +2,6 @@ import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
-
-from google.cloud import firestore
-from google.oauth2 import service_account
-
-import json
-key_dict = json.loads(st.secrets["textkey"])
-creds = service_account.Credentials.from_service_account_info(key_dict)
-db = firestore.Client(credentials=creds, project="streamlit-firebase-ba9da")
 
 df = sns.load_dataset('titanic')
 st.subheader('データフレーム')
