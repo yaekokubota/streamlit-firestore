@@ -13,7 +13,7 @@
         },
         {
             "name":"debug",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "module":"streamlit",
             "console":"integratedTerminal",
