@@ -1,24 +1,12 @@
-import seaborn as sns
 import streamlit as st
-import matplotlib.pyplot as plt
-from google.cloud import firestore
-from google.oauth2 import service_account
-
-import json
-key_dict = json.loads(st.secrets["textkey"])
-creds = service_account.Credentials.from_service_account_info(key_dict)
-db = firestore.Client(credentials=creds, project="streamlit-firebase-ba9da")
-
 import seaborn as sns
-
-df = sns.load_dataset('titanic')
-for index, row in df.iterrows():
-    db.collection('titanic').add(row.to_dict())
+import matplotlib.pyplot as plt
+import japanize_matplotlib
 
 df = sns.load_dataset('titanic')
 st.subheader('データフレーム')
 st.dataframe(df, height=150)
-  
+
 df["生存・死亡"]=df["survived"].map(lambda x:"生存" if x else "死亡")
 df["性別"]=df["sex"].map(lambda x:"男性" if x else "女性")
 classmap = {"First":"1等", "Second":"2等", "Third":"3等"}

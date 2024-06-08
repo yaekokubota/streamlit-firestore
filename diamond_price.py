@@ -4,14 +4,6 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn import linear_model, preprocessing
-from google.cloud import firestore
-from google.oauth2 import service_account
-
-import json
-key_dict = json.loads(st.secrets["textkey"])
-creds = service_account.Credentials.from_service_account_info(key_dict)
-db = firestore.Client(credentials=creds, project="streamlit-firebase-ba9da")
-
 
 df = sns.load_dataset('diamonds')
 st.dataframe(df)
